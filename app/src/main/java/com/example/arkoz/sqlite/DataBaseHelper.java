@@ -2,6 +2,7 @@ package com.example.arkoz.sqlite;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
@@ -50,6 +51,35 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         else {
             return true;
         }
+    }
+
+    public Cursor getData() {
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor result = db.rawQuery("Select * from " + TABLE_NAME, null);
+        return result;
+    }
+
+    public boolean updateData(String id,String name, String phone, String email, String country, String state) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(col_2, name);
+        contentValues.put(col_3, phone);
+        contentValues.put(col_4, email);
+        contentValues.put(col_5, country);
+        contentValues.put(col_6, state);
+        int results = db.update(TABLE_NAME, contentValues, "ID = ?",new String[] { id });
+        if (results > 0) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+
+    public Integer deleteData (String id) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        int i = db.delete(TABLE_NAME, "ID = ?",new String[] {id});
+        return i;
     }
 }
 

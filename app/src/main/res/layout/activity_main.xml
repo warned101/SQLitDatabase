@@ -1,56 +1,100 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:layout_height="wrap_content" >
 
-    <EditText
-        android:id="@+id/txt_name"
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Enter name"
-        android:layout_margin="15dp"/>
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
 
-    <EditText
-        android:id="@+id/txt_phone"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Enter phone number"
-        android:inputType="number"
-        android:layout_margin="10dp"
-        android:layout_below="@+id/txt_name"/>
+        <EditText
+            android:id="@+id/txt_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter name"
+            android:layout_margin="5dp"/>
 
-    <EditText
-        android:id="@+id/txt_email"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Enter email address"
-        android:inputType="textEmailAddress"
-        android:layout_margin="10dp"
-        android:layout_below="@+id/txt_phone" />
+        <EditText
+            android:id="@+id/txt_phone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter phone number"
+            android:inputType="number"
+            android:layout_margin="5dp"
+            android:layout_below="@+id/txt_name"/>
 
-    <Spinner
-        android:id="@+id/spinner_country"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:layout_below="@id/txt_email"/>
+        <EditText
+            android:id="@+id/txt_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter email address"
+            android:inputType="textEmailAddress"
+            android:layout_margin="5dp"
+            android:layout_below="@+id/txt_phone" />
 
-    <Spinner
-        android:id="@+id/spinner_state"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:layout_below="@id/spinner_country"/>
+        <Spinner
+            android:id="@+id/spinner_country"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_below="@id/txt_email"/>
 
-    <Button
-        android:id="@+id/idBtn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/spinner_state"
-        android:layout_margin="20dp"
-        android:text="INSERT"/>
+        <Spinner
+            android:id="@+id/spinner_state"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_below="@id/spinner_country"/>
 
-</RelativeLayout>
+        <Button
+            android:id="@+id/idBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/spinner_state"
+            android:layout_margin="10dp"
+            android:text="INSERT" />
+
+        <Button
+            android:id="@+id/btn_read"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/idBtn"
+            android:layout_margin="10dp"
+            android:text="READ"/>
+
+        <Button
+            android:id="@+id/btn_update"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/btn_read"
+            android:layout_margin="10dp"
+            android:text="UPDATE"/>
+
+        <Button
+            android:id="@+id/btn_delete"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/btn_update"
+            android:layout_margin="10dp"
+            android:text="DELETE"/>
+
+        <EditText
+            android:id="@+id/txt_id"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter ID"
+            android:layout_below="@id/btn_delete"
+            android:layout_margin="5dp"/>
+
+        <TextView
+            android:id="@+id/idResult"
+            android:layout_below="@id/txt_id"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"/>
+
+    </RelativeLayout>
+</ScrollView>
